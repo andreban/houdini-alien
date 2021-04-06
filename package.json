@@ -1,0 +1,16 @@
+{
+  "name": "houdini-alien",
+  "version": "0.1.0",
+  "description": "A CSS Paint Worket that paints background that looks alien.",
+  "main": "AlienPainter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CSS",
+    "Houdini",    
+    "paintworklet"
+  ],
+  "author": "André Cipriani Bandarra",
+  "license": "Apache-2.0"
+}
