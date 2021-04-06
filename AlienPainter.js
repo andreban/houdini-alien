@@ -24,17 +24,20 @@ class AlienPainter {
   }
   
   paint(ctx, geom, properties) {
-    const bgColor = properties.get(BG_COLOR_PROPERTY)
-    const fgColor = properties.get(FG_COLOR_PROPERTY)
-    const size = properties.get(GRID_SIZE_PROPERTY).value;
+    const bgColor = properties.get(BG_COLOR_PROPERTY).toString().trim();
+    const fgColor = properties.get(FG_COLOR_PROPERTY).toString().trim();
+    const size = parseInt(properties.get(GRID_SIZE_PROPERTY));
     
     ctx.fillStyle = fgColor;
     ctx.fillRect(0, 0, geom.width, geom.height);
-    ctx.fillStyle = bgColor;
 
+    const gridWidth = Math.trunc(geom.width / size);
+    const gridHeight = Math.trunc(geom.height / size);
+
+    ctx.fillStyle = bgColor;
     ctx.beginPath();
-    for(let y = 0; y < (geom.height / size); y++) {
-      for(let x = 0; x < (geom.width / size); x++) {
+    for(let y = 0; y < gridHeight; y++) {
+      for(let x = 0; x < gridWidth; x++) {
         if ((x ^ y) % 9) {          
           ctx.rect(x * size, y * size, size, size);
         } 

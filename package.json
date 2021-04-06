@@ -1,6 +1,6 @@
 {
   "name": "houdini-alien",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A CSS Paint Worket that paints background that looks alien.",
   "main": "AlienPainter.js",
   "scripts": {
